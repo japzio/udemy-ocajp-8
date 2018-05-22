@@ -807,11 +807,14 @@ TreeSet
 
 Queue
  - with head and tail
- - first in first out (FIFO)
  - implementations: ArrayBlockingQueue and PriorityQueue
  
 ArrayBlockingQueue
-
+ - first in first out (FIFO)
+ - head is the oldest, tails is the newest
+ - removes and element on the head and adding in the tail
+ - holds a fix number of elements, capacity cannot be changed
+ 
  
 
 
