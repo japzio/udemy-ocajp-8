@@ -808,14 +808,47 @@ TreeSet
 Queue
  - with head and tail
  - implementations: ArrayBlockingQueue and PriorityQueue
+ - with exception-throwing and non-exception-throwing methods
  
 ArrayBlockingQueue
  - first in first out (FIFO)
  - head is the oldest, tails is the newest
  - removes and element on the head and adding in the tail
  - holds a fix number of elements, capacity cannot be changed
+
+PriorityQueue
+ - allow first-class or premium queue to skip to the head of the line
+ - anything with higher "order" is moved to the head
+ - elements are ordered by their natural ordering (Comparable/Comparator)
+ - an unbounded priority queue based on a priority heap, opposite to ArrayBlockingQueue
+ - as elements added, it automatically grows
+ - non thread-safe, use PriorityBlockingQueue
  
- 
+Deque
+ - A linear collection that supports element insertion and removal at both ends.
+ - The name deque is short for "double ended queue" and is usually pronounced "deck".
+ - unbounded
+ - implementations: ArrayDeque
+
+ArrayDeque
+ - null element is not allowed
+ - not thread-safe
+
+Map
+ - part of the Java Collections Framework but not associated with Collections interface
+ - key-value pairs
+ - operations to elements in a map use key
+ - does not allow duplicate keys
+ - AbstractMap
+  * HashMap(most popular)
+  * TreeMap
+ - Dictionary
+  * Hashtable
+
+HashMap
+ - ordered via hashCode() method
+
+
 
 
  
