@@ -848,15 +848,93 @@ Map
 HashMap
  - ordered via hashCode() method
 
+###Section 17
 
+Collections, more with ...
 
+Collections
+ - objects are generalized, needed casting
+ - he exact primitive type of the argument
+ - if the argument is a byte, short, char, int, or long:
+ - the next larger size whole number primitive available (byte, short, int, and long)
+ - the smallest size decimal primitive available (float, double)
+ - if the argument is a float: A double primitive
+ - a wrapper class type (has to be an exact match)
+ - Varargs (exact primitive type)
+ - if the argument is a byte, short, char, int, or long:
+     the next larger size whole number varargs available (byte, short, int, and long)
+ - the smallest size decimal varargs available (float, double)
+ - if the argument is a float:
+     A double varargs
+ - Varargs (exact Wrapper class)
 
  
+Limitations
+ - cannot store primitive types, mitigated by the use of wrapper classes
+ - everything is treated or stored as an Object reference
  
+Wrapper classess 
+ - allow us to add primites to collections
+ - wrappers attach functionality to primitive data types
+ 
+Generics
+ - allows us to specify the intended data type to be stored in a reference
 
+Autoboxing
+ - automatic wrapping of the wrapper class @since 1.5
  
+```java
+class GenericsAndAutoboxingSample {
+  
+  public static void main(String... args) {
+    
+    List<Integer> integerList = new ArrayList<>();
+    
+    integerList.add(1);
+    integerList.add(6);
+    integerList.add(3);
+    integerList.add(5);
+    
+    int x = integerList.get(1);
+    
+  }
+  
+}
+```
+
+Tha Dianmond Operator <>
+ - @since 1.7
+ - suggests that the instance will be of the same type as the reference
+ - to reduce type declaration
  
+Building arrays from Arrays.asList() and Anonymous arrays
+ - original definition: Arrays.asList(T... elements);
+
+```java
+class ArrayUtilsUsage {
+  public static void main(String... args) {
+    
+    // syntax
+    List<MyDate> dates = Arrays.asList(new MyDate(2,1,2020), new MyDate(3,10,1980));
+    
+    // another syntax
+    MyDate[] datesArray = {new MyDate(2,1,2020), new MyDate(3,10,1980)};
+    
+    List<Mydate> dates2 = Arrays.asList(datesArray);
+    
+  }
+}
+
+```
+
+Sorting and Searching Collections
+ - using *java.util.Collections* companion class similar to *java.util.Arrays*
+ - helper methods are available to Collections helper class
+ - study the api
  
+Comparable
+ - Stings and primitives are automatically sorted via unicode values
+ - to sort custom types, those must implement Comparable interface
 
  
 
