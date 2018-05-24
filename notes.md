@@ -676,22 +676,26 @@ class MyObject {
 Multi Dimensional Arrays
  - multiple indices
 ```java
-int[][] credentials = new int[3][2]; // legal
-  int[][] credentials2 = new int[3]; /* Illegal. Missing the 2nd dimension */
-```
+class MultiDimArraysSample {
+  public static void main(String... args) {
+    
+    int[][] credentials = new int[3][2]; // legal
+    int[][] credentials2 = new int[3]; /* Illegal. Missing the 2nd dimension */
 
-  - Just like regular arrays, the square brackets can go to the right of the type, or the right of the identifier:
-```java
-int[][] credentials = new int[3][2];
-//or 
 
-int credentials[][] = new int[3][2]; 
-```
-  - They can be split up as well (though this is uncommon)
-```java
-int[] moreStuff[][] = new int[3][3][2];
-// or
-int[][] moreStuff[] = new int[3][3][2];
+    // Just like regular arrays, the square brackets can go to the right of the type, or the right of the identifier:
+    int[][] credentials = new int[3][2];
+
+    //or 
+    int credentials[][] = new int[3][2]; 
+
+    // They can be split up as well (though this is uncommon)
+    int[] moreStuff[][] = new int[3][3][2];
+    // or
+    int[][] moreStuff[] = new int[3][3][2]; 
+    
+  }
+}
 ```
 
 Sorting and Searching Arrays
@@ -739,7 +743,7 @@ class VarArgsExample {
 }
 ```
 
-###Section 16 
+### Section 16 
 
 Java Collections Framework
  - when arrays are not enough
@@ -848,7 +852,7 @@ Map
 HashMap
  - ordered via hashCode() method
 
-###Section 17
+### Section 17
 
 Collections, more with ...
 
