@@ -1,3 +1,8 @@
+### Section 1
+
+Course and Exam Overview
+Environment Setup
+
 ### Section 2
 
 java
@@ -1017,7 +1022,8 @@ public class ExceptionHandlingSample {
     try {
       char chr = str.charAt(30); 
     } catch ( NullPointerException | ArrayIndexOutOfBoundsException e) {
-      System.out.println("more specific exception here");
+      System.out.println("more specific exception here : " + e.getMessage());
+      e.printStackTrace();
     } catch ( Exception e ) {
       System.out.println("generic exception here");
     } finally {
@@ -1029,10 +1035,41 @@ public class ExceptionHandlingSample {
 ```
  
 Finally block
- - allows you to execute code no matter what the circumstances
+ - allows you to execute code no matter what the circumstances unless there's System.exit() before it
  - releasing file handles or closing streams
+ - possible combinations
+  * try-catch-finally with as many catches as needed
+  * try-catch         with as many catches as needed
+  * try-finally
+ 
+The Exception Object
+ - may contain useful information to both the application and the developer
+ - has a set of methods that can be accessed within the catch block 
+ 
+Checked(Runtime) vs Checked Exceptions
+ - Throwable is the super class for all Java object being thrown
+ - anything inherits from java.lang.Runtime are unchecked exceptions(optional catching)
+ - everything else including custom exceptions are checked exceptions(requires capturing)
 
-
+Creating Custom Exceptions
+ - custom exception class must directly or indirectly(most common) extends Throwable
+```java
+public class OverdraftException extends Exception {
+  public OverDraftException(String message) {
+    super(message);
+  }
+}
+```
+Dispatching Exception
+```java
+public class AccountService {
+  public void withdrawAmount(double amount) throws OverdraftException {
+    if ( amount > balance) {
+      throw new OverdraftException("Insufficient funds!");
+    }
+  }
+}
+```
  
 
  
