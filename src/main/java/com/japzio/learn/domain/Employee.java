@@ -1,7 +1,5 @@
 package com.japzio.learn.domain;
 
-import com.japzio.learn.functional.Payable;
-
 public class Employee extends Person {
 
   private MyDate hireDate;

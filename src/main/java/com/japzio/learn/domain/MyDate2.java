@@ -1,14 +1,16 @@
 package com.japzio.learn.domain;
 
-public class MyDate implements Comparable<MyDate> {
+import java.util.Comparator;
+
+public class MyDate2 implements Comparator<MyDate> {
 
   public int day;
   public int month;
   public int year;
 
-  public MyDate() {}
+  public MyDate2() {}
 
-  public MyDate(int d, int m, int y) {
+  public MyDate2(int d, int m, int y) {
     day = d;
     month = m;
     year = y;
@@ -25,18 +27,18 @@ public class MyDate implements Comparable<MyDate> {
   }
 
   @Override
-  public int compareTo(MyDate myDate) {
+  public int compare(MyDate o1, MyDate o2) {
 
-    if ( year != myDate.year) {
-      return year - myDate.year;
+    if ( o1.year != o2.year ) {
+      return o1.year - o2.year;
     }
 
-    if ( month != myDate.month ) {
-      return month - myDate.month;
+    if ( o1.month != o2.month ) {
+      return o1.month - o2.month;
     }
 
-    if ( day != myDate.day ) {
-      return day - myDate.day;
+    if ( o1.day != o2.day ) {
+      return o1.day - o2.day;
     }
 
     return 0;

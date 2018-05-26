@@ -939,6 +939,104 @@ Sorting and Searching Collections
 Comparable
  - Stings and primitives are automatically sorted via unicode values
  - to sort custom types, those must implement Comparable interface
+ 
+ ```java
+ public class MyDate implements Comparable<MyDate> {
+   private int month;
+   private int day;
+   private int year;
+   public int compareTo(MyDate date) {
+     int result = 0;
+     if( year != date.year ) {
+       result = year - date.year;
+     } else if( month != date.month ) {
+       result = month - date.month;
+     } else if( day != date.day ) {
+       result = day - date.day;
+     }
+     return result;
+   }
+ }
+ ```
+ 
+Comparator
+ - also in java.util package
+ - another more flexible in implementing order is to pass a sorting object
+ - the compare() method takes to Object arguments
+ - positive number if the argument is larger than the second
+ - zero if they are equal
+ - negative if otherwise
+ - compare object with different types
+ ```java
+ import java.util.Comparator;
+ public class MyDateComparator implements Comparator<MyDate> {
+   public int compare(MyDate date1, MyDate date2) {
+   int result = 0;
+   if( date1.getYear() != date2.getYear() ) {
+     result = date1.getYear() - date2.getYear();
+     } else if( date1.getMonth() != date2.getMonth() ) {
+       result = date1.getMonth() - date2.getMonth();
+     } else if( date1.getDay() != date2.getDay() ) {
+       result = date1.getDay() - date2.getDay();
+     }
+     return result;
+   }
+ }
+ ```
+ 
+### Section 18
+
+Exception Handling
+
+Throwable
+ - is an event the interrupts the normal flow of a program
+ - java.lang package
+ - when a problem occurs, it creates an Object and hands it over to the runtime systems
+ - contains a snapshot of the entire execution stack
+ - my contain another Throwable
+ - types : java.lang.Error and java.lang.Exception
+
+Error
+ - represents a serious problem that the application should not try to recover from
+
+Exceptions
+ - problems that can be handled
+ 
+Catching Exceptions
+ - using try catch, with the default catching generic type Exception
+ - if more generic exceptions are listed first, the program won't compile
+ - java 7, can include multiple exceptions on a single catch block using single or ( | ) operator
+```java
+public class ExceptionHandlingSample {
+
+  public static void main(String... args) {
+    String str = "Exception handling";
+
+    System.out.println("before problem");
+
+    try {
+      char chr = str.charAt(30); 
+    } catch ( NullPointerException | ArrayIndexOutOfBoundsException e) {
+      System.out.println("more specific exception here");
+    } catch ( Exception e ) {
+      System.out.println("generic exception here");
+    } finally {
+      System.out.println("Release file locks, close streams and exit gracefully");
+    }
+    System.out.println("after problem");
+  }
+}
+```
+ 
+Finally block
+ - allows you to execute code no matter what the circumstances
+ - releasing file handles or closing streams
+
+
+ 
+
+ 
+ 
 
  
 
