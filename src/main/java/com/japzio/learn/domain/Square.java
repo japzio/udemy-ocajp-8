@@ -1,6 +1,6 @@
 package com.japzio.learn.domain;
 
-public class Square extends Shape {
+public class Square extends Quadrilateral {
 
   public double area() {
     return 0;
