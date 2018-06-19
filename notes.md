@@ -1046,7 +1046,7 @@ The Exception Object
  - may contain useful information to both the application and the developer
  - has a set of methods that can be accessed within the catch block 
  
-Checked(Runtime) vs Checked Exceptions
+Unchecked(Runtime) vs Checked Exceptions
  - Throwable is the super class for all Java object being thrown
  - anything inherits from java.lang.Runtime are unchecked exceptions(optional catching)
  - everything else including custom exceptions are checked exceptions(requires capturing)
